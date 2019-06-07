@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondoinicio"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".view.LoginActivity">
+
+    <EditText
+        android:id="@+id/txtEmailLogin"
+        android:drawableLeft="@drawable/introhombre"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="280dp"
+        android:textColorHint="#FAFAFA"
+        android:ems="30"
+        android:hint="USUARIO"
+        android:paddingLeft="15dp"
+        android:drawablePadding="10dp"
+        android:inputType="textPersonName"
+        android:textSize="15dp"
+        android:background="@drawable/caja_transparente"/>
+
+    <EditText
+        android:id="@+id/txtPasswordLogin"
+        android:drawableLeft="@drawable/candado"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:textColorHint="#FAFAFA"
+        android:layout_marginTop="10dp"
+        android:ems="30"
+        android:textSize="15dp"
+        android:paddingLeft="15dp"
+        android:drawablePadding="10dp"
+        android:hint="CONTRASEÑA"
+        android:background="@drawable/caja_transparente"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/btnEnterLogin"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/boton_redondo"
+        android:onClick="Login"
+        android:text="Ingresar" />
+
+    <Button
+        android:id="@+id/btnRegisterLogin"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/boton_redondo"
+        android:onClick="Register"
+        android:text="Registrarse" />
+
+    <Button
+        android:id="@+id/btnForgetPasswordLogin"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#0000"
+        android:onClick="ForgetPassword"
+        android:text="Olvidé mi contraseña" />
+
+</LinearLayout>

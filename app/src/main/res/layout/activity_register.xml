@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.RegisterActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent">
+
+    </android.support.v7.widget.Toolbar>
+
+
+
+    <android.support.v7.widget.CardView
+        android:layout_margin="30dp"
+        app:cardCornerRadius="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NUEVO USUARIO"
+                android:layout_gravity="center_horizontal"
+                android:textSize="20dp"/>
+
+            <EditText
+                android:id="@+id/txtEmailRegister"
+                android:layout_marginTop="20dp"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/editextstyle"
+                android:ems="10"
+                android:hint="Ingresar Correo"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/txtPasswordRegister"
+                android:background="@drawable/editextstyle"
+                android:layout_marginTop="40dp"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:ems="10"
+                android:hint="Ingresar Contraseña"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:id="@+id/txtRepeatPasswordRegister"
+                android:background="@drawable/editextstyle"
+                android:layout_marginTop="40dp"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:ems="10"
+                android:hint="Repetir Contraseña"
+                android:inputType="textPassword" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="40dp"
+                >
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/boton_redondo"
+                    android:onClick="Save"
+                    android:text="Guardar" />
+
+
+                <Button
+                    android:id="@+id/btnCancelar"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text="Cancelar"
+                    android:background="@drawable/editextstyle"
+                    android:layout_marginTop="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="Cancel"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

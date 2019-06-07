@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Sin Qupa</string>
+    <string name="title_profile">Perfil</string>
+    <string name="title_map">Mapa</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCniBQzQufkodkXttssOLT6ylVev48MdiE</string>
+</resources>
