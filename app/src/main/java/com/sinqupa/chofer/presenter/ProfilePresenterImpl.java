@@ -12,6 +12,7 @@ import com.sinqupa.chofer.view.LoginActivity;
 public class ProfilePresenterImpl  implements IProfilePresenter{
     private Context context;
     private boolean serviceActive = false;
+
     @Override
     public boolean checkPermissions() {
         for(String permission : Utility.PERMISSIONS){
@@ -88,7 +89,6 @@ public class ProfilePresenterImpl  implements IProfilePresenter{
             }else {
                 TastyToast.makeText(context, "Iniciar Recorrido", TastyToast.LENGTH_LONG, TastyToast.WARNING);
             }
-
         }else {
             TastyToast.makeText(context, "Permisos Requeridos", TastyToast.LENGTH_LONG, TastyToast.WARNING);
         }
