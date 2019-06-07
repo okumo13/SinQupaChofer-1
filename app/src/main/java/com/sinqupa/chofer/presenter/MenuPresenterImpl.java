@@ -10,7 +10,6 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.view.MenuItem;
 import android.view.View;
-
 import com.sinqupa.chofer.R;
 import com.sinqupa.chofer.model.Utility;
 import com.sinqupa.chofer.view.MapFragment;

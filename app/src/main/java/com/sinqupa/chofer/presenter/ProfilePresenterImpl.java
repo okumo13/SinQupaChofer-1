@@ -4,16 +4,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
-
-import com.google.firebase.auth.FirebaseAuth;
 import com.sdsmdg.tastytoast.TastyToast;
 import com.sinqupa.chofer.model.Employee;
-import com.sinqupa.chofer.model.User;
 import com.sinqupa.chofer.model.Utility;
 import com.sinqupa.chofer.view.LoginActivity;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class ProfilePresenterImpl  implements IProfilePresenter{
     private Context context;

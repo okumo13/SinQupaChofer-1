@@ -4,7 +4,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-
 import com.sinqupa.chofer.R;
 import com.sinqupa.chofer.model.User;
 import com.sinqupa.chofer.presenter.IRegisterPresenter;
