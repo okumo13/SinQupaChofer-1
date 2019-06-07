@@ -9,14 +9,13 @@ import android.view.ViewGroup;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.sinqupa.chofer.R;
 import com.sinqupa.chofer.presenter.IMapPresenter;
 import com.sinqupa.chofer.presenter.MapPresenterImpl;
 
 public class MapFragment extends Fragment implements OnMapReadyCallback {
     IMapPresenter mapPresenter = new MapPresenterImpl();
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_map,container,false);
