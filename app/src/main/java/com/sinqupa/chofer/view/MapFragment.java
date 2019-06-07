@@ -25,7 +25,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         return view;
     }
 
-    @SuppressLint("MissingPermission")
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mapPresenter.loadMap(googleMap);
