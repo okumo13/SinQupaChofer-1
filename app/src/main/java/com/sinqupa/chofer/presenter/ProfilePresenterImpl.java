@@ -17,7 +17,7 @@ import java.util.Map;
 
 public class ProfilePresenterImpl  implements IProfilePresenter{
     private Context context;
-
+    private boolean serviceActive = false;
     @Override
     public boolean checkPermissions() {
         for(String permission : Utility.PERMISSIONS){
@@ -44,8 +44,10 @@ public class ProfilePresenterImpl  implements IProfilePresenter{
 
     @Override
     public void doLogout() {
-        Utility.databaseReference.child("Employee").child(Utility.userID).setValue(new Employee(Utility.DEFAULT_LATITUDE,Utility.DEFAULT_LONGITUDE,false));
-        context.stopService(new Intent(context, LocationUpdatesService.class));
+        if (serviceActive){
+            Utility.databaseReference.child("Employee").child(Utility.userID).setValue(new Employee(Utility.DEFAULT_LATITUDE,Utility.DEFAULT_LONGITUDE,false));
+            context.stopService(new Intent(context, LocationUpdatesService.class));
+        }
         Utility.firebaseAuth.signOut();
         navigationToLogin();
     }
@@ -61,7 +63,11 @@ public class ProfilePresenterImpl  implements IProfilePresenter{
 
     @Override
     public boolean doStopService() {
-      return false;
+        boolean result = false;
+        if (checkPermissions()){
+            result = true;
+        }
+        return result;
     }
 
     @Override
@@ -71,17 +77,27 @@ public class ProfilePresenterImpl  implements IProfilePresenter{
                 context.startForegroundService(new Intent(context, LocationUpdatesService.class));
             }
             context.startService(new Intent(context, LocationUpdatesService.class));
+            serviceActive = true;
             TastyToast.makeText(context, "Aplicacion Iniciada", TastyToast.LENGTH_LONG, TastyToast.DEFAULT);
         }else {
-
+            TastyToast.makeText(context, "Permisos Requeridos", TastyToast.LENGTH_LONG, TastyToast.WARNING);
         }
     }
 
     @Override
     public void stopService() {
-        Utility.databaseReference.child("Employee").child(Utility.userID).setValue(new Employee(Utility.DEFAULT_LATITUDE,Utility.DEFAULT_LONGITUDE,false));
-        context.stopService(new Intent(context, LocationUpdatesService.class));
-        TastyToast.makeText(context, "Aplicacion Detenida", TastyToast.LENGTH_LONG, TastyToast.DEFAULT);
+        if (doStopService()){
+            if (serviceActive){
+                Utility.databaseReference.child("Employee").child(Utility.userID).setValue(new Employee(Utility.DEFAULT_LATITUDE,Utility.DEFAULT_LONGITUDE,false));
+                context.stopService(new Intent(context, LocationUpdatesService.class));
+                TastyToast.makeText(context, "Aplicacion Detenida", TastyToast.LENGTH_LONG, TastyToast.DEFAULT);
+            }else {
+                TastyToast.makeText(context, "Iniciar Recorrido", TastyToast.LENGTH_LONG, TastyToast.WARNING);
+            }
+
+        }else {
+            TastyToast.makeText(context, "Permisos Requeridos", TastyToast.LENGTH_LONG, TastyToast.WARNING);
+        }
     }
 
     @Override
